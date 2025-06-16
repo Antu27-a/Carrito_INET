@@ -1,5 +1,17 @@
 // Sistema de menú dinámico por roles
-const rolUsuario = "usuario" // podés cambiar a 'usuario' o 'jefe'
+// Obtené el rol dinámicamente desde el backend
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/model/getRol.php") // Ajustado a tu estructura
+    .then((res) => res.json())
+    .then((data) => {
+      const rol = data.rol || "visitante";
+      cargarMenu(rol);
+    })
+    .catch((err) => {
+      console.error("Error al obtener el rol:", err);
+      cargarMenu("visitante");
+    });
+});
 
 // Opciones por rol
 const menuPorRol = {

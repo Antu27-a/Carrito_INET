@@ -11,9 +11,9 @@ if (!empty($_POST["ingreso"])) {
 
         try {
             // Preparamos la consulta
-            $stmt = $Ruta->prepare("INSERT INTO usuario(nombre, email, password) 
+            $stmt = $Ruta->prepare("INSERT INTO usuarios(nombre, email, password) 
                                     VALUES (?, ?, ?)");
-            $stmt->bind_param("ssssss", $nombre, $email, $password);
+            $stmt->bind_param("sss", $nombre, $email, $password);
             $stmt->execute();
 
             echo "Registrado correctamente";

@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let slideInterval
 
   // Variables para los modales
+  const inil = document.querySelector(".inis")
+  const reisi = document.querySelector(".reis")
   const loginBtn = document.querySelector(".login-btn")
   const registerBtn = document.querySelector(".register-btn")
   const loginModal = document.getElementById("login-modal")
@@ -99,6 +101,20 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.classList.remove("active")
       document.body.style.overflow = "" // Restaurar scroll
     }
+  }
+
+  if (inil){
+    como.addEventListener("click", () => {
+      showModal(loginModal)
+    }
+    )
+  }
+  
+  if (reisi){
+    reisi.addEventListener("click", () => {
+      showModal(registerModal)
+    }
+    )
   }
 
   // Event listeners para abrir modales (botones en la sección welcome)
@@ -208,11 +224,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hacer las funciones disponibles globalmente para el menú dinámico
   window.showModal = showModal
   window.closeModal = closeModal
-
-
-  
 })
-
-
 //--------------------------------------------------------------------------------------------------
-

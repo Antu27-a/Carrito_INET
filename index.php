@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+include("controller/db.php");
+include("model/login.php");
+include("model/registro.php");
 ?>
 
 <!DOCTYPE html>
@@ -29,17 +33,18 @@ session_start();
         </div>
         <nav>
             <ul id="nav-menu">
+                
                 <!-- Este contenido será reemplazado por JavaScript -->
-                <?php
+                 <?php 
                     if (isset($_SESSION['usuario'])) {
                         // Usuario logueado
-                        echo "<a href='model/logout.php' class='btn-login'>Cerrar sesión</a>";
+                        echo "<li><a href='model/logout.php' class=''>Cerrar sesión</a></li>";
                     } else {
                         // Usuario invitado
-                        echo "<a href='view/pages/login.php' class='btn-login'>Iniciar sesión</a>";
-                        echo "<a href='view/pages/registrar.php' class='btn-registrarse'>Registrarse</a>";
+                        echo "<li><a href='#' class='inis'>Iniciar sesión</a></li>";
+                        echo "<li><a href='#' class='reis'>Registrarse</a></li>";
                     }
-                ?>
+                ?> 
             </ul>
         </nav>
 
@@ -176,14 +181,19 @@ session_start();
             <form class="auth-form" method="post">
                 <div class="form-group">
                     <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" required>
+                    <input type="email" name="email" id="email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Contraseña</label>
-                    <input type="password" id="password" required>
+                    <input type="password" name="password" id="password" required>
                 </div>
-                <button type="submit" class="btn submit-btn">Entrar</button>
+                <button type="submit" name="ingresar" class="btn submit-btn">Entrar</button>
                 <p class="form-footer">¿No tienes cuenta? <a href="#" id="show-register">Regístrate</a></p>
+                <?php
+                    include("controller/db.php");
+                    
+                    include("model/login.php");
+                ?>
             </form>
         </div>
     </div>
