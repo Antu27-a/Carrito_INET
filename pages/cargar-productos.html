@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jfe de ventas</title>
+    <link rel="stylesheet" href="../static/css/global.css">
 </head>
+
 <body>
-    
+    <!-- Encabezado -->
+    <header>
+        <div class="logo-container">
+            <img src="../static/img/logo.png" alt="Logo" class="logo">
+            <div class="slogan">
+                <h1> DEST </h1>
+                <p>Descubre el mundo, vive la experiencia</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="menu-navegacion">
+                <li> <a href="../pages/productos.html"> <img src="../static/img/encabezado-logueado/home.png"
+                            alt="home"> Inicio</a></li>
+                <li><a href="../pages/carrito.html"> <img src="../static/img/encabezado-logueado/grocery-store.png"
+                            alt="home"> Ver carrito</a></li>
+                <li><a href="../pages/ver-pedidos.html"> <img
+                            src="../static/img/encabezado-logueado/bolsa-de-la-compra.png" alt="home"> Mis pedidos</a>
+                </li>
+                <li> <a class="cerrar-sesion" href="../index.html"> <img
+                            src="../static/img/encabezado-logueado/salida.png" alt="home"> Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="welcome">
+            <h1>Bienvenido a tu inventario</h1>
+        
+        </div>
+        <div class="contenido-inventario">
+            <div class="objeto">
+                <div class="img-card">
+                    <img src="../img/" alt="">
+                </div>
+                <div class="info-card">
+                    <h2>Chocolate Casero</h2>
+                    <h4>Buenos Aires, La matanza.</h4>
+                    <h4><span>Envio </span>Gratis</h4>
+                    <h3>100000$</h3>
+                </div>
+            </div>
+            <div class="añadir-objeto">
+                <input type="submit" value="Añadir Objeto +">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
 </body>
+
 </html>

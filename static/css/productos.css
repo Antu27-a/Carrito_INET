@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Banner */
+.banner {
+    background: linear-gradient(#171718, #115e67c2);
+    /* background-size: cover; */
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.contenedor-banner {
+    max-width: 1200px;
+    height: 70vh;
+    margin: 0 auto;
+    padding: 100px 2rem;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 0px #115e67;
+}
+
+
+.fila-busqueda {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 20px;
+}
+
+.entrada-busqueda,
+.entrada-precio {
+    padding: 0.75rem;
+    border: 3px solid #55a86e;
+    border-radius: 10px;
+    font-size: 1rem;
+    flex: 1;
+    min-width: 200px;
+    outline: none;
+}
+
+.selector-filtro {
+    padding: 0.75rem;
+    border: 3px solid #000000a9;
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    font-weight: bold;
+}
+
+.grupo-precio {
+    font-weight: bold;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex: 1;
+}
+
+.entrada-precio {
+    flex: 1;
+    min-width: 80px;
+    background-color: #dcebd7;
+    outline: none;
+}
+
+.boton-filtrar {
+    font-weight: bold;
+    background: #397c5d;
+    color: rgb(0, 0, 0);
+    padding: 0.75rem 2rem;
+    border: 1px solid #ffff;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 120px;
+}
+
+.boton-filtrar:hover {
+    background: #55a86e;
+    color: #ffffff;
+    box-shadow: 4px -4px 25px rgba(203, 233, 197, 0.562);
+
+}
+
+
+/* Contenido principal */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 20px;
+}
+
+.tarjeta-producto {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: -6px 6px 2px #0720146c;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid #115e67;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 3px #0720143a;
+}
+
+.contenido-producto {
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.nombre-producto {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+
+.tipo-producto {
+    background: #115e67;
+    color: white;
+    padding: 0.5rem 0.5rem;
+    border-radius: 10px;
+    font-size: 15px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.descripcion-producto {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.precio-producto {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #069636;
+    margin-bottom: 1rem;
+}
+
+.boton-agregar {
+    background: #55a86e;
+    border: 2px solid #000000;
+    color: white;
+    padding: 0.35rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: auto;
+}
+
+.boton-agregar img {
+    max-width: 25px;
+}
+
+.boton-agregar:hover {
+    background: #020202;
+    border: 2px solid #55a86e;
+}
+
+.titulo-productos {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titulo-productos::after {
+    content: "";
+    position: absolute;
+    width: 100%; /* o una cantidad específica */
+    height: 3px;
+    background-color: var(--primary-color);
+    bottom: -1px;
+    left: 0;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor-encabezado {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-navegacion {
+        justify-content: center;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .fila-busqueda {
+        flex-direction: column;
+    }
+
+    .entrada-busqueda,
+    .select-filtro,
+    .grupo-precio {
+        min-width: 100%;
+    }
+
+    .grilla-productos {
+        grid-template-columns: 1fr;
+    }
+}

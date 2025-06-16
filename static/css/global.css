@@ -1,17 +1,17 @@
-:root {
-  --primary-color: #55a86e;
-  --secondary-color: #4ecdc4;
-  --accent-color: #ffe66d;
-  --dark-color: #4caf50;
-  /* --light-color: #b3e20b; */
-  --transition: all 0.3s ease;
-}
-
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Variables y reset */
+:root {
+    /* boton registrar y linea */
+    --primary-color: #55a86e;
+    /* titulos texto */
+    --dark-color: #115e67;
+    /* --light-color: #b3e20b; */
+    --transition: all 0.3s ease;
 }
 
 body {
@@ -23,18 +23,38 @@ body {
     background-color: #e3f2fd;
 }
 
+.menu-navegacion li a {
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente imagen y texto */
+    gap: 0.2rem;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.menu-navegacion li a img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.cerrar-sesion {
+   background-color: #252525f6;
+   
+}
+
 /* Header y navegación */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 10px;
     background-color: #000000ab;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
-
+    font-weight: bold;
 }
 
 .logo-container {
@@ -43,12 +63,13 @@ header {
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
+    width: 140px;
+    height: 90px;
     object-fit: contain;
     margin-right: 1rem;
     animation: pulse 2s infinite;
 }
+
 
 @keyframes pulse {
     0% {
@@ -84,7 +105,7 @@ nav ul {
 
 nav ul li {
     margin-left: 2rem;
-
+    
 }
 
 nav ul li a {
@@ -101,7 +122,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #4caf50;
-    border: 2px solid #d0f0e0;
+    box-shadow: 5px -2px 0px #000000;
+    border: 2px solid #ffffff;
+    background-color: #00000091;
 
 }
