@@ -147,13 +147,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Prevenir envío de formularios (para demo)
-  const forms = document.querySelectorAll(".auth-form")
-  forms.forEach((form) => {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault()
-      alert("Funcionalidad en desarrollo. Esta es una demostración.")
-    })
-  })
+  // const forms = document.querySelectorAll(".auth-form")
+  // forms.forEach((form) => {
+  //   form.addEventListener("submit", (e) => {
+  //     e.preventDefault()
+  //     alert("Funcionalidad en desarrollo. Esta es una demostración.")
+  //   })
+  // })
 
   // Efecto de parallax en el slider
   window.addEventListener("scroll", () => {

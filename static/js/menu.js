@@ -1,5 +1,5 @@
 // Sistema de menú dinámico por roles
-const rolUsuario = "visitante" // podés cambiar a 'usuario' o 'jefe'
+const rolUsuario = "usuario" // podés cambiar a 'usuario' o 'jefe'
 
 // Opciones por rol
 const menuPorRol = {

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +12,7 @@
     <link rel="stylesheet" href="static/css/global.css">
     <link rel="stylesheet" href="static/css/styles.css">
     <script src="static/js/index.js"></script>
-    <script src="static/js/menu.js"></script>
+    <!-- <script src="static/js/menu.js"></script> -->
     <script src="static/js/menu-hamburguesa.js"></script>
     <link rel="icon" href="static/img/logo.png" type="image/x-icon">
 </head>
@@ -26,6 +30,16 @@
         <nav>
             <ul id="nav-menu">
                 <!-- Este contenido será reemplazado por JavaScript -->
+                <?php
+                    if (isset($_SESSION['usuario'])) {
+                        // Usuario logueado
+                        echo "<a href='model/logout.php' class='btn-login'>Cerrar sesión</a>";
+                    } else {
+                        // Usuario invitado
+                        echo "<a href='view/pages/login.php' class='btn-login'>Iniciar sesión</a>";
+                        echo "<a href='view/pages/registrar.php' class='btn-registrarse'>Registrarse</a>";
+                    }
+                ?>
             </ul>
         </nav>
 
@@ -159,7 +173,7 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2>Iniciar Sesión</h2>
-            <form class="auth-form">
+            <form class="auth-form" method="post">
                 <div class="form-group">
                     <label for="email">Correo electrónico</label>
                     <input type="email" id="email" required>
@@ -179,14 +193,14 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2>Crear Cuenta</h2>
-            <form class="auth-form">
+            <form onsubmit="return validarContraseñas()" class="auth-form" method="post">
                 <div class="form-group">
                     <label for="reg-name">Nombre completo</label>
-                    <input type="text" id="reg-name" required>
+                    <input type="text" name="nombre" id="reg-name" required>
                 </div>
                 <div class="form-group">
                     <label for="reg-email">Correo electrónico</label>
-                    <input type="email" id="reg-email" required>
+                    <input type="email" name="email" id="reg-email" required>
                 </div>
                 <div class="form-group">
                     <label for="reg-password">Contraseña</label>
@@ -194,13 +208,31 @@
                 </div>
                 <div class="form-group">
                     <label for="reg-confirm">Confirmar contraseña</label>
-                    <input type="password" id="reg-confirm" required>
+                    <input type="password" name="password" id="reg-confirm" required>
                 </div>
-                <button type="submit" class="btn submit-btn">Registrarse</button>
+                <script>
+                    function validarContraseñas() {
+                        const pass = document.getElementById("reg-password").value;
+                        const confirmPass = document.getElementById("reg-confirm").value;
+
+                        if (pass !== confirmPass) {
+                            alert("Las contraseñas no coinciden.");
+                            return false; // Evita que se envíe el formulario
+                        }
+                        return true;
+                    }
+                </script>
+                <button type="submit" name="ingreso" class="btn submit-btn">Registrarse</button>
                 <p class="form-footer">¿Ya tienes cuenta? <a href="#" id="show-login">Inicia sesión</a></p>
+                
             </form>
         </div>
     </div>
+    <?php
+        include("controller/db.php");
+        include("model/registro.php");
+        include("model/login.php");
+    ?>
 
     <script src="static/js/index.js"></script>
 
