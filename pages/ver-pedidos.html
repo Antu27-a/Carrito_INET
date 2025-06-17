@@ -5,10 +5,400 @@
     <meta charset="UTF-8">
     <title>Pedidos Pendientes de Usuario</title>
     <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/ver-pedidos-cliente.css">
+    <script src="../static/js/menu-hamburguesa.js"></script>
+    <link rel="icon" href="../static/img/logo.png" type="image/x-icon">
 </head>
 
 <body>
-    <h2>Pedidos Pendientes</h2>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo-container">
+            <img src="../static/img/logo.png" alt="Logo" class="logo">
+            <div class="slogan">
+                <h1> DEST </h1>
+                <p>Descubre el mundo, vive la experiencia</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="menu-navegacion">
+                <li> <a href="../pages/productos.html"> <img src="../static/img/encabezado-logueado/home.png"
+                            alt="home"> Inicio</a></li>
+                <li><a href="../pages/carrito.html"> <img src="../static/img/encabezado-logueado/grocery-store.png"
+                            alt="home"> Ver carrito</a></li>
+                <li><a href="../pages/ver-pedidos.html"> <img
+                            src="../static/img/encabezado-logueado/bolsa-de-la-compra.png" alt="home"> Mis pedidos</a>
+                </li>
+                <li> <a class="cerrar-sesion" href="../index.html"> <img
+                            src="../static/img/encabezado-logueado/salida.png" alt="home"> Cerrar sesión</a></li>
+            </ul>
+        </nav>
+
+        <!-- Botón Hamburguesa -->
+        <button class="boton-hamburguesa" onclick="toggleMenu()">
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+        </button>
+    </header>
+    <!-- Overlay para cerrar menú -->
+    <div class="overlay-menu" onclick="cerrarMenu()"></div>
+
+    <!-- Menú Móvil -->
+    <div class="menu-movil">
+        <ul>
+            <li><a href="../pages/productos.html"><img src="../static/img/encabezado-logueado/home.png" alt="home">
+                    Inicio</a></li>
+            </li>
+            <li><a href="pages/carrito.html"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="carrito"> Ver carrito</a></li>
+            <li><a href="../pages/ver-pedidos.html"><img src="../static/img/encabezado-logueado/bolsa-de-la-compra.png"
+                        alt="pedidos"> Mis pedidos</a></li>
+            <li><a class="cerrar-sesion" href="../index.html"><img src="../static/img/encabezado-logueado/salida.png"
+                        alt="salir"> Cerrar sesión</a></li>
+        </ul>
+    </div>
+
+
+    <!-- Contenido Principal -->
+    <main class="contenido-principal">
+        <div class="contenedor">
+            <div class="encabezado-seccion">
+                <h2 class="titulo-seccion">Mis Pedidos</h2>
+                <p class="subtitulo-seccion">Revisa el estado y detalles de tus pedidos</p>
+            </div>
+
+            <!-- Lista de Pedidos -->
+            <div class="lista-pedidos">
+                <!-- Pedido 1 -->
+                <article class="tarjeta-pedido">
+                    <div class="info-pedido">
+                        <div class="numero-pedido">#1234</div>
+                        <div class="fecha-pedido">15 de Enero, 2024</div>
+                        <div class="estado-pedido entregado">Entregado</div>
+                        <div class="total-pedido">$1,250,000</div>
+                    </div>
+                    <div class="contenedor-botones">
+                        <a href="#modal-1234" class="boton-detalle">Ver detalle</a>
+                        <a href="#" class="boton-detalle-cancelar">Cancelar compra</a>
+                    </div>
+                </article>
+
+                <!-- Pedido 2 -->
+                <article class="tarjeta-pedido">
+                    <div class="info-pedido">
+                        <div class="numero-pedido">#1235</div>
+                        <div class="fecha-pedido">18 de Enero, 2024</div>
+                        <div class="estado-pedido en-camino">En camino</div>
+                        <div class="total-pedido">$890,500</div>
+                    </div>
+                    <div class="contenedor-botones">
+                        <a href="#modal-1235" class="boton-detalle">Ver detalle</a>
+                        <a href="#" class="boton-detalle-cancelar">Cancelar compra</a>
+                    </div>
+                </article>
+
+                <!-- Pedido 3 -->
+                <article class="tarjeta-pedido">
+                    <div class="info-pedido">
+                        <div class="numero-pedido">#1236</div>
+                        <div class="fecha-pedido">20 de Enero, 2024</div>
+                        <div class="estado-pedido confirmado">Confirmado</div>
+                        <div class="total-pedido">$2,100,000</div>
+                    </div>
+                    <div class="contenedor-botones">
+                        <a href="#modal-1236" class="boton-detalle">Ver detalle</a>
+                        <a href="#" class="boton-detalle-cancelar">Cancelar compra</a>
+                    </div>
+                </article>
+
+                <!-- Pedido 4 -->
+                <article class="tarjeta-pedido">
+                    <div class="info-pedido">
+                        <div class="numero-pedido">#1237</div>
+                        <div class="fecha-pedido">22 de Enero, 2024</div>
+                        <div class="estado-pedido pendiente">Pendiente</div>
+                        <div class="total-pedido">$675,000</div>
+                    </div>
+                    <div class="contenedor-botones">
+                        <a href="#modal-1237" class="boton-detalle">Ver detalle</a>
+                        <a href="#" class="boton-detalle-cancelar">Cancelar compra</a>
+                    </div>
+                </article>
+
+                <!-- Pedido 5 -->
+                <article class="tarjeta-pedido">
+                    <div class="info-pedido">
+                        <div class="numero-pedido">#1238</div>
+                        <div class="fecha-pedido">25 de Enero, 2024</div>
+                        <div class="estado-pedido en-preparacion">En preparación</div>
+                        <div class="total-pedido">$1,450,000</div>
+                    </div>
+                    <div class="contenedor-botones">
+                        <a href="#modal-1238" class="boton-detalle">Ver detalle</a>
+                        <a href="#" class="boton-detalle-cancelar">Cancelar compra</a>
+                    </div>
+                </article>
+
+                <!-- Pedido 6 -->
+                <article class="tarjeta-pedido">
+                    <div class="info-pedido">
+                        <div class="numero-pedido">#1239</div>
+                        <div class="fecha-pedido">28 de Enero, 2024</div>
+                        <div class="estado-pedido cancelado">Cancelado</div>
+                        <div class="total-pedido">$320,000</div>
+                    </div>
+                    <div class="contenedor-botones">
+                        <a href="#modal-1239" class="boton-detalle">Ver detalle</a>
+                        <a href="#" class="boton-detalle-cancelar">Cancelar compra</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modales de Detalle -->
+    <!-- Modal Pedido 1234 -->
+    <div id="modal-1234" class="modal">
+        <div class="contenido-modal">
+            <div class="encabezado-modal">
+                <h3>Detalle del Pedido #1234</h3>
+                <a href="#" class="boton-cerrar">&times;</a>
+            </div>
+            <div class="cuerpo-modal">
+                <div class="info-general">
+                    <p><strong>Fecha:</strong> 15 de Enero, 2024</p>
+                    <p><strong>Estado:</strong> <span class="estado entregado">Entregado</span></p>
+                </div>
+                <div class="productos-pedido">
+                    <h4>Productos incluidos:</h4>
+                    <div class="lista-productos">
+                        <div class="producto-item">
+                            <span class="nombre-producto">París Romántico - 7 días</span>
+                            <span class="precio-producto">$850,000</span>
+                        </div>
+                        <div class="producto-item">
+                            <span class="nombre-producto">Seguro de Viaje Premium</span>
+                            <span class="precio-producto">$150,000</span>
+                        </div>
+                        <div class="producto-item">
+                            <span class="nombre-producto">Tour Nocturno por París</span>
+                            <span class="precio-producto">$250,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="resumen-pedido">
+                    <div class="linea-resumen">
+                        <span>Subtotal:</span>
+                        <span>$1,250,000</span>
+                    </div>
+                    <div class="linea-resumen total">
+                        <span><strong>Total:</strong></span>
+                        <span><strong>$1,250,000</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pedido 1235 -->
+    <div id="modal-1235" class="modal">
+        <div class="contenido-modal">
+            <div class="encabezado-modal">
+                <h3>Detalle del Pedido #1235</h3>
+                <a href="#" class="boton-cerrar">&times;</a>
+            </div>
+            <div class="cuerpo-modal">
+                <div class="info-general">
+                    <p><strong>Fecha:</strong> 18 de Enero, 2024</p>
+                    <p><strong>Estado:</strong> <span class="estado en-camino">En camino</span></p>
+                </div>
+                <div class="productos-pedido">
+                    <h4>Productos incluidos:</h4>
+                    <div class="lista-productos">
+                        <div class="producto-item">
+                            <span class="nombre-producto">Cartagena Colonial - 5 días</span>
+                            <span class="precio-producto">$650,000</span>
+                        </div>
+                        <div class="producto-item">
+                            <span class="nombre-producto">Excursión Islas del Rosario</span>
+                            <span class="precio-producto">$240,500</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="resumen-pedido">
+                    <div class="linea-resumen">
+                        <span>Subtotal:</span>
+                        <span>$890,500</span>
+                    </div>
+                    <div class="linea-resumen total">
+                        <span><strong>Total:</strong></span>
+                        <span><strong>$890,500</strong></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pedido 1236 -->
+    <div id="modal-1236" class="modal">
+        <div class="contenido-modal">
+            <div class="encabezado-modal">
+                <h3>Detalle del Pedido #1236</h3>
+                <a href="#" class="boton-cerrar">&times;</a>
+            </div>
+            <div class="cuerpo-modal">
+                <div class="info-general">
+                    <p><strong>Fecha:</strong> 20 de Enero, 2024</p>
+                    <p><strong>Estado:</strong> <span class="estado confirmado">Confirmado</span></p>
+                </div>
+                <div class="productos-pedido">
+                    <h4>Productos incluidos:</h4>
+                    <div class="lista-productos">
+                        <div class="producto-item">
+                            <span class="nombre-producto">Tokio Moderno - 10 días</span>
+                            <span class="precio-producto">$1,800,000</span>
+                        </div>
+                        <div class="producto-item">
+                            <span class="nombre-producto">JR Pass - 7 días</span>
+                            <span class="precio-producto">$300,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="resumen-pedido">
+                    <div class="linea-resumen">
+                        <span>Subtotal:</span>
+                        <span>$2,100,000</span>
+                    </div>
+                    <div class="linea-resumen total">
+                        <span><strong>Total:</strong></span>
+                        <span><strong>$2,100,000</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pedido 1237 -->
+    <div id="modal-1237" class="modal">
+        <div class="contenido-modal">
+            <div class="encabezado-modal">
+                <h3>Detalle del Pedido #1237</h3>
+                <a href="#" class="boton-cerrar">&times;</a>
+            </div>
+            <div class="cuerpo-modal">
+                <div class="info-general">
+                    <p><strong>Fecha:</strong> 22 de Enero, 2024</p>
+                    <p><strong>Estado:</strong> <span class="estado pendiente">Pendiente</span></p>
+                </div>
+                <div class="productos-pedido">
+                    <h4>Productos incluidos:</h4>
+                    <div class="lista-productos">
+                        <div class="producto-item">
+                            <span class="nombre-producto">Medellín Ciudad Eterna - 4 días</span>
+                            <span class="precio-producto">$475,000</span>
+                        </div>
+                        <div class="producto-item">
+                            <span class="nombre-producto">Tour Guatapé y Piedra del Peñol</span>
+                            <span class="precio-producto">$200,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="resumen-pedido">
+                    <div class="linea-resumen">
+                        <span>Subtotal:</span>
+                        <span>$675,000</span>
+                    </div>
+                    <div class="linea-resumen total">
+                        <span><strong>Total:</strong></span>
+                        <span><strong>$675,000</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pedido 1238 -->
+    <div id="modal-1238" class="modal">
+        <div class="contenido-modal">
+            <div class="encabezado-modal">
+                <h3>Detalle del Pedido #1238</h3>
+                <a href="#" class="boton-cerrar">&times;</a>
+            </div>
+            <div class="cuerpo-modal">
+                <div class="info-general">
+                    <p><strong>Fecha:</strong> 25 de Enero, 2024</p>
+                    <p><strong>Estado:</strong> <span class="estado en-preparacion">En preparación</span></p>
+                </div>
+                <div class="productos-pedido">
+                    <h4>Productos incluidos:</h4>
+                    <div class="lista-productos">
+                        <div class="producto-item">
+                            <span class="nombre-producto">Roma Histórica - 8 días</span>
+                            <span class="precio-producto">$1,200,000</span>
+                        </div>
+                        <div class="producto-item">
+                            <span class="nombre-producto">Tour Vaticano VIP</span>
+                            <span class="precio-producto">$250,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="resumen-pedido">
+                    <div class="linea-resumen">
+                        <span>Subtotal:</span>
+                        <span>$1,450,000</span>
+                    </div>
+                    <div class="linea-resumen total">
+                        <span><strong>Total:</strong></span>
+                        <span><strong>$1,450,000</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pedido 1239 -->
+    <div id="modal-1239" class="modal">
+        <div class="contenido-modal">
+            <div class="encabezado-modal">
+                <h3>Detalle del Pedido #1239</h3>
+                <a href="#" class="boton-cerrar">&times;</a>
+            </div>
+            <div class="cuerpo-modal">
+                <div class="info-general">
+                    <p><strong>Fecha:</strong> 28 de Enero, 2024</p>
+                    <p><strong>Estado:</strong> <span class="estado cancelado">Cancelado</span></p>
+                </div>
+                <div class="productos-pedido">
+                    <h4>Productos incluidos:</h4>
+                    <div class="lista-productos">
+                        <div class="producto-item">
+                            <span class="nombre-producto">Bogotá Cultural - 3 días</span>
+                            <span class="precio-producto">$320,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="resumen-pedido">
+                    <div class="linea-resumen">
+                        <span>Subtotal:</span>
+                        <span>$320,000</span>
+                    </div>
+                    <div class="linea-resumen total">
+                        <span><strong>Total:</strong></span>
+                        <span><strong>$320,000</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!--  <h2>Pedidos Pendientes ventas</h2>
     <ul class="pedidos">
         <li>
             <strong>Tour Iguazú - $145.000</strong><br>
@@ -22,7 +412,4 @@
             <button>Modificar</button>
             <button>Eliminar</button>
         </li>
-    </ul>
-</body>
-
-</html>
+    </ul> -->

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../static/css/global.css">
     <script src="../static/js/index.js"></script>
     <link rel="icon" href="static/img/logo.png" type="image/x-icon">
+    <script src="../static/js/menu-hamburguesa.js"></script>
 </head>
 
 <body>
@@ -21,17 +22,47 @@
                 <p>Descubre el mundo, vive la experiencia</p>
             </div>
         </div>
-       
+
         <nav>
             <ul class="menu-navegacion">
-                <li> <a  href="../pages/productos.html"> <img src="../static/img/encabezado-logueado/home.png" alt="home"> Inicio</a></li>
-                <li><a href="../pages/carrito.html"> <img src="../static/img/encabezado-logueado/grocery-store.png" alt="home"> Ver carrito</a></li>
-                <li><a href="../pages/ver-pedidos.html"> <img src="../static/img/encabezado-logueado/bolsa-de-la-compra.png" alt="home"> Mis pedidos</a></li>
-                <li> <a class="cerrar-sesion" href="../index.html"> <img src="../static/img/encabezado-logueado/salida.png" alt="home"> Cerrar sesión</a></li>
+                <li> <a href="../pages/productos.html"> <img src="../static/img/encabezado-logueado/home.png"
+                            alt="home"> Inicio</a></li>
+                <li><a href="../pages/carrito.html"> <img src="../static/img/encabezado-logueado/grocery-store.png"
+                            alt="home"> Ver carrito</a></li>
+                <li><a href="../pages/ver-pedidos.html"> <img
+                            src="../static/img/encabezado-logueado/bolsa-de-la-compra.png" alt="home"> Mis pedidos</a>
+                </li>
+                <li> <a class="cerrar-sesion" href="../index.html"> <img
+                            src="../static/img/encabezado-logueado/salida.png" alt="home"> Cerrar sesión</a></li>
             </ul>
         </nav>
+
+        <!-- Botón Hamburguesa -->
+        <button class="boton-hamburguesa" onclick="toggleMenu()">
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+        </button>
     </header>
-   
+    <!-- Overlay para cerrar menú -->
+    <div class="overlay-menu" onclick="cerrarMenu()"></div>
+
+    <!-- Menú Móvil -->
+    <div class="menu-movil">
+        <ul>
+            <li><a href="../pages/productos.html"><img src="../static/img/encabezado-logueado/home.png" alt="home">
+                    Inicio</a></li>
+            <li><a href="../pages/cargar-productos.html"><img
+                        src="../static/img/encabezado-logueado/agregar-paquete.png" alt="carrito"> Agregar producto</a>
+            </li>
+            <li><a href="pages/carrito.html"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="carrito"> Ver carrito</a></li>
+            <li><a href="../pages/ver-pedidos.html"><img src="../static/img/encabezado-logueado/bolsa-de-la-compra.png"
+                        alt="pedidos"> Mis pedidos</a></li>
+            <li><a class="cerrar-sesion" href="../index.html"><img src="../static/img/encabezado-logueado/salida.png"
+                        alt="salir"> Cerrar sesión</a></li>
+        </ul>
+    </div>
 
     <!-- Banner con buscador y filtros -->
     <section class="banner">
@@ -46,7 +77,9 @@
                         <option value="">Tipo de servicio</option>
                         <option value="estadia">Estadía</option>
                         <option value="vuelo">Vuelo</option>
+                        <option value="auto">Excursiones</option>
                         <option value="auto">Auto</option>
+                        <option value="auto">Translados</option>
                         <option value="todo-incluido">Todo incluido</option>
                     </select>
                     <div class="grupo-precio">
@@ -66,99 +99,123 @@
 
             <div class="tarjeta-producto feature">
                 <div class="contenido-producto">
+                    <span class="CODIGO">COD-123</span>
                     <h3 class="nombre-producto">Escapada a Bariloche</h3>
-                    <span class="tipo-producto">Todo incluido</span>
-                    <p class="descripcion-producto description">Disfruta de 5 días y 4 noches en el corazón de la Patagonia. Incluye
+                    <span class="tipo-producto">Todo incluido</span> 
+                    <p class="descripcion-producto description">Disfruta de 5 días y 4 noches en el corazón de la
+                        Patagonia. Incluye
                         alojamiento en hotel 4 estrellas, desayuno, excursiones al Cerro Catedral y navegación por el
                         Lago Nahuel Huapi.</p>
                     <div class="precio-producto">$89.500</div>
                 </div>
-                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png" alt="comprar"></button>
+                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="comprar"></button>
             </div>
 
             <div class="tarjeta-producto feature">
                 <div class="contenido-producto">
+                    <span class="CODIGO">COD-123</span>
                     <h3 class="nombre-producto">Buenos Aires City Tour</h3>
-                    <span class="tipo-producto">Estadía</span>
-                    <p class="descripcion-producto description">3 días y 2 noches en la capital argentina. Hotel céntrico, city tour
+                    <span class="tipo-producto">Estadía</span> <span class="tipo-producto">Vuelo </span>
+                    <p class="descripcion-producto description">3 días y 2 noches en la capital argentina. Hotel
+                        céntrico, city tour
                         por los barrios más emblemáticos, show de tango y cena en Puerto Madero.</p>
                     <div class="precio-producto">$45.200</div>
                 </div>
-                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png" alt="comprar"></button>
+                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="comprar"></button>
             </div>
 
             <div class="tarjeta-producto feature">
                 <div class="contenido-producto">
+                    <span class="CODIGO">COD-123</span>
                     <h3 class="nombre-producto">Vuelo a Miami</h3>
                     <span class="tipo-producto">Vuelo</span>
-                    <p class="descripcion-producto description">Vuelo directo Buenos Aires - Miami. Incluye equipaje de mano y
+                    <p class="descripcion-producto description">Vuelo directo Buenos Aires - Miami. Incluye equipaje de
+                        mano y
                         bodega. Salidas todos los días de la semana. Válido por 6 meses.</p>
                     <div class="precio-producto">$125.800</div>
                 </div>
-                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png" alt="comprar"></button>
+                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="comprar"></button>
             </div>
 
             <div class="tarjeta-producto feature">
                 <div class="contenido-producto">
+                    <span class="CODIGO">COD-123</span>
                     <h3 class="nombre-producto">Alquiler Auto Mendoza</h3>
                     <span class="tipo-producto">Auto</span>
-                    <p class="descripcion-producto description">Alquiler de auto compacto por 7 días en Mendoza. Incluye seguro
+                    <p class="descripcion-producto description">Alquiler de auto compacto por 7 días en Mendoza. Incluye
+                        seguro
                         completo, GPS y asistencia 24hs. Ideal para recorrer las bodegas de la región.</p>
                     <div class="precio-producto">$28.900</div>
                 </div>
-                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png" alt="comprar"></button>
+                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="comprar"></button>
             </div>
 
             <div class="tarjeta-producto feature">
                 <div class="contenido-producto">
+                    <span class="CODIGO">COD-123</span>
                     <h3 class="nombre-producto">Cataratas del Iguazú</h3>
                     <span class="tipo-producto">Todo incluido</span>
-                    <p class="descripcion-producto description">4 días y 3 noches visitando las majestuosas Cataratas. Incluye
+                    <p class="descripcion-producto description">4 días y 3 noches visitando las majestuosas Cataratas.
+                        Incluye
                         vuelos, hotel, todas las comidas, excursiones al lado argentino y brasileño, y paseo en lancha.
                     </p>
                     <div class="precio-producto">$67.300</div>
                 </div>
-                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png" alt="comprar"></button>
+                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="comprar"></button>
             </div>
 
             <div class="tarjeta-producto feature">
                 <div class="contenido-producto">
+                    <span class="CODIGO">COD-123</span>
                     <h3 class="nombre-producto">Salta y Jujuy Mágico</h3>
                     <span class="tipo-producto">Estadía</span>
-                    <p class="descripcion-producto description">6 días explorando el norte argentino. Visita a la Quebrada de
+                    <p class="descripcion-producto description">6 días explorando el norte argentino. Visita a la
+                        Quebrada de
                         Humahuaca, Salinas Grandes, Purmamarca y Tilcara. Incluye alojamiento y desayunos.</p>
                     <div class="precio-producto">$52.700</div>
                 </div>
-                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png" alt="comprar"></button>
+                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="comprar"></button>
             </div>
 
             <div class="tarjeta-producto feature">
                 <div class="contenido-producto">
+                    <span class="CODIGO">COD-123</span>
                     <h3 class="nombre-producto">Vuelo a Europa</h3>
                     <span class="tipo-producto">Vuelo</span>
-                    <p class="descripcion-producto description">Vuelo Buenos Aires - Madrid con escala. Incluye equipaje completo.
+                    <p class="descripcion-producto description">Vuelo Buenos Aires - Madrid con escala. Incluye equipaje
+                        completo.
                         Múltiples fechas disponibles. Conexiones a principales ciudades europeas.</p>
                     <div class="precio-producto">$198.500</div>
                 </div>
-                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png" alt="comprar"></button>
+                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="comprar"></button>
             </div>
 
             <div class="tarjeta-producto feature">
                 <div class="contenido-producto">
+                    <span class="CODIGO">COD-123</span>
                     <h3 class="nombre-producto">Ushuaia Fin del Mundo</h3>
                     <span class="tipo-producto">Todo incluido</span>
-                    <p class="descripcion-producto description">5 días en la ciudad más austral del mundo. Navegación por el Canal
+                    <p class="descripcion-producto description">5 días en la ciudad más austral del mundo. Navegación
+                        por el Canal
                         Beagle, Tren del Fin del Mundo, Parque Nacional Tierra del Fuego y avistaje de pingüinos.</p>
                     <div class="precio-producto">$78.400</div>
                 </div>
-                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png" alt="comprar"></button>
+                <button class="boton-agregar"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="comprar"></button>
             </div>
 
         </div>
     </main>
 
     <footer>
-        
+
     </footer>
 
 </body>
