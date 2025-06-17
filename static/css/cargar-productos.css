@@ -1,0 +1,344 @@
+.sector1 {
+    /* background-color: #295a8a; */
+    margin: 20px 50px;
+    display: grid;
+    place-items: center;
+    /* min-height: 500px;  */
+    /* o el alto que necesites */
+}
+
+
+.contenedor {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 10px 2px 1px rgba(0, 0, 0, 0.214);
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    border: 2px solid #115e67;
+    animation: aparecerSuave 0.5s ease-out;
+}
+
+
+@keyframes aparecerSuave {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.titulo {
+    text-align: center;
+    color: #000000;
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 500px;
+}
+
+.grupo-formulario {
+    margin-bottom: 10px;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 5px;
+    color: #115e67;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.campo-obligatorio::after {
+    content: ' *';
+    color: #bf2333;
+}
+
+.entrada-formulario {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #55a86e;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    background: #f8fcff;
+}
+
+.entrada-formulario:focus {
+    outline: none;
+    border-color: #115e67;
+    box-shadow: 0 0 0 2px #115e675a;
+    transform: translateY(-1px);
+}
+
+.entrada-formulario:hover {
+    border-color: #000000;
+}
+
+textarea.entrada-formulario {
+    min-height: 90px;
+    font-family: inherit;
+    resize: none;
+}
+
+.entrada-formulario::-webkit-outer-spin-button,
+.entrada-formulario::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.entrada-precio {
+    position: relative;
+}
+
+.entrada-precio::before {
+    content: '$';
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0c3d02;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.entrada-precio input {
+    padding-left: 32px;
+}
+
+/* Selector de Servicios */
+.selector-servicios {
+    position: relative;
+}
+
+.desplegable-servicios {
+    background: #edf8ff;
+    border: 1px solid #55a86e;
+    border-radius: 4px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    position: relative;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.desplegable-servicios:hover {
+    border-color: #115e67;
+    transform: translateY(-1px);
+}
+
+.desplegable-servicios::after {
+    content: '▼';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    color: #000000;
+    font-size: 12px;
+}
+
+.opciones-servicios {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fafafa;
+    border: 1px solid #000000;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(1, 10, 27, 0.367);
+}
+
+.selector-servicios:focus-within .opciones-servicios {
+    max-height: 200px;
+    /* Muestra el scroll solo si es necesario */
+    overflow-y: auto;
+}
+
+.selector-servicios:focus-within .desplegable-servicios {
+    border-color: #000000;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+
+}
+
+.selector-servicios:focus-within .desplegable-servicios::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.opcion-servicio {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    transition: background-color 0.15s ease;
+    cursor: pointer;
+
+}
+
+
+.opcion-servicio:hover {
+    background-color: #d3d8de;
+}
+
+.opcion-servicio input[type="checkbox"] {
+    margin-right: 12px;
+    accent-color: #19a643;
+    transform: scale(1.1);
+}
+
+.opcion-servicio label {
+    margin: 0;
+    cursor: pointer;
+    flex: 1;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500;
+}
+
+.texto-placeholder {
+    font-size: 16px;
+    color: #000000;
+}
+
+/* botonnnnn */
+.boton-enviar {
+    width: 100%;
+    padding: 16px;
+    background: #000000;
+    color: #ffffff;
+    border: 2px solid #55a86e;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.boton-enviar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transition: left 0.5s ease;
+}
+
+.boton-enviar:hover {
+    color: #ffffff;
+    background: #115e67;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(2, 56, 109, 0.403);
+}
+
+.boton-enviar:hover::before {
+    left: 100%;
+}
+
+.boton-enviar:active {
+    transform: translateY(0);
+}
+
+
+/* Animación de enfoque */
+@keyframes pulsoSuave {
+    0% {
+        box-shadow: 0 0 0 0 rgba(56, 111, 167, 0.455);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(0, 102, 204, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 102, 204, 0);
+    }
+}
+
+.entrada-formulario:focus:invalid {
+    animation: pulsoSuave 1.5s infinite;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+
+    .contenedor {
+        padding: 20px;
+        box-shadow: 4px 2px 6px rgba(0, 0, 0, 0.2);
+        min-width: unset;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .grupo-formulario label {
+        font-size: 16px;
+    }
+
+    .entrada-formulario {
+        font-size: 15px;
+        padding: 10px 14px;
+    }
+
+    .desplegable-servicios {
+        padding: 10px 14px;
+    }
+
+    .opcion-servicio label {
+        font-size: 15px;
+    }
+
+    .boton-enviar {
+        padding: 14px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sector1 {
+        margin: 10px;
+    }
+
+    .contenedor {
+        padding: 15px;
+    }
+
+    .titulo {
+        font-size: 20px;
+    }
+
+    .entrada-formulario {
+        font-size: 14px;
+    }
+
+    .opcion-servicio label {
+        font-size: 14px;
+    }
+
+    .boton-enviar {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .desplegable-servicios::after {
+        font-size: 10px;
+    }
+}

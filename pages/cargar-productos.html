@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jfe de ventas</title>
     <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/cargar-productos.css">
+    <script src="../static/js/menu-hamburguesa.js"></script>
 </head>
 
 <body>
@@ -32,28 +34,103 @@
                             src="../static/img/encabezado-logueado/salida.png" alt="home"> Cerrar sesión</a></li>
             </ul>
         </nav>
+        <!-- Botón Hamburguesa -->
+        <button class="boton-hamburguesa" onclick="toggleMenu()">
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+        </button>
     </header>
+
+    <!-- Overlay para cerrar menú -->
+    <div class="overlay-menu" onclick="cerrarMenu()"></div>
+
+    <!-- Menú Móvil -->
+    <div class="menu-movil">
+        <ul>
+            <li><a href="pages/productos.html"><img src="../static/img/encabezado-logueado/home.png" alt="home">
+                    Inicio</a></li>
+            <li><a href="pages/carrito.html"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="carrito"> Ver carrito</a></li>
+            <li><a href="pages/ver-pedidos.html"><img src="../static/img/encabezado-logueado/bolsa-de-la-compra.png"
+                        alt="pedidos"> Mis pedidos</a></li>
+            <li><a class="cerrar-sesion" href="../index.html"><img src="../static/img/encabezado-logueado/salida.png"
+                        alt="salir"> Cerrar sesión</a></li>
+        </ul>
+    </div>
+
     <main>
-        <div class="welcome">
-            <h1>Bienvenido a tu inventario</h1>
-        
-        </div>
-        <div class="contenido-inventario">
-            <div class="objeto">
-                <div class="img-card">
-                    <img src="../img/" alt="">
-                </div>
-                <div class="info-card">
-                    <h2>Chocolate Casero</h2>
-                    <h4>Buenos Aires, La matanza.</h4>
-                    <h4><span>Envio </span>Gratis</h4>
-                    <h3>100000$</h3>
-                </div>
+        <section class="sector1">
+            <div class="contenedor">
+                <h1 class="titulo">Cargar Paquete Turístico</h1>
+
+                <form>
+                    <div class="grupo-formulario">
+                        <label for="codigo" class="campo-obligatorio">Código del Producto</label>
+                        <input type="text" id="codigo" name="codigo" class="entrada-formulario" placeholder="PKG123"
+                            required>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="nombre">Nombre del Destino</label>
+                        <input type="text" id="nombre" name="nombre" class="entrada-formulario" placeholder="..."
+                            required>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label>Servicios Incluidos</label>
+                        <div class="selector-servicios">
+                            <div class="desplegable-servicios" tabindex="0">
+                                <span class="texto-placeholder">Seleccionar servicios...</span>
+                            </div>
+                            <div class="opciones-servicios">
+                                <div class="opcion-servicio">
+                                    <input type="checkbox" id="vuelo" name="servicios" value="vuelo">
+                                    <label for="vuelo">Vuelo</label>
+                                </div>
+                                <div class="opcion-servicio">
+                                    <input type="checkbox" id="hotel" name="servicios" value="hotel">
+                                    <label for="hotel">Hotel</label>
+                                </div>
+                                <div class="opcion-servicio">
+                                    <input type="checkbox" id="excursiones" name="servicios" value="excursiones">
+                                    <label for="excursiones">Excursiones</label>
+                                </div>
+                                <div class="opcion-servicio">
+                                    <input type="checkbox" id="auto" name="servicios" value="auto">
+                                    <label for="auto">Auto</label>
+                                </div>
+                                <div class="opcion-servicio">
+                                    <input type="checkbox" id="seguro" name="servicios" value="seguro">
+                                    <label for="seguro">Seguro</label>
+                                </div>
+                                <div class="opcion-servicio">
+                                    <input type="checkbox" id="traslados" name="servicios" value="traslados">
+                                    <label for="traslados">Traslados</label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" name="descripcion" class="entrada-formulario"
+                            placeholder="Breve explicación del paquete, actividades incluidas, duración..."></textarea>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="precio">Precio Unitario</label>
+                        <div class="entrada-precio">
+                            <input type="number" id="precio" name="precio" class="entrada-formulario" step="0.01"
+                                min="0" placeholder="350000.00" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="boton-enviar">Agregar Paquete</button>
+                </form>
             </div>
-            <div class="añadir-objeto">
-                <input type="submit" value="Añadir Objeto +">
-            </div>
-        </div>
+        </section>
     </main>
 
     <footer>

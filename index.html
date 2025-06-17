@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="static/css/styles.css">
     <script src="static/js/index.js"></script>
     <script src="static/js/menu.js"></script>
+    <script src="static/js/menu-hamburguesa.js"></script>
     <link rel="icon" href="static/img/logo.png" type="image/x-icon">
 </head>
 
@@ -27,7 +28,32 @@
                 <!-- Este contenido será reemplazado por JavaScript -->
             </ul>
         </nav>
+
+        <!-- Botón Hamburguesa -->
+        <button class="boton-hamburguesa" onclick="toggleMenu()">
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+        </button>
     </header>
+
+
+    <!-- Overlay para cerrar menú -->
+    <div class="overlay-menu" onclick="cerrarMenu()"></div>
+
+    <!-- Menú Móvil -->
+    <div class="menu-movil">
+        <ul>
+            <li><a href="pages/productos.html"><img src="../static/img/encabezado-logueado/home.png" alt="home">
+                    Inicio</a></li>
+            <li><a href="pages/carrito.html"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="carrito"> Ver carrito</a></li>
+            <li><a href="pages/ver-pedidos.html"><img src="../static/img/encabezado-logueado/bolsa-de-la-compra.png"
+                        alt="pedidos"> Mis pedidos</a></li>
+            <li><a class="cerrar-sesion" href="../index.html"><img src="../static/img/encabezado-logueado/salida.png"
+                        alt="salir"> Cerrar sesión</a></li>
+        </ul>
+    </div>
 
     <!-- INDEX INVITADO -->
     <main>
@@ -124,7 +150,7 @@
                 <img src="static/img/tarjetas/viajar (1).png" alt="Logo" class="logo-small">
                 <p>AGENCIA DE VIAJES </p>
             </div>
-            
+
         </div>
     </footer>
 
