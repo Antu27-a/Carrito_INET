@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #55a86e;
     --dark-color: #115e67;
@@ -40,7 +39,7 @@
     color: #000000;
     max-width: 600px;
     margin: 0 auto;
-  
+
 }
 
 
@@ -135,7 +134,8 @@
 .contenedor-botones {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* espacio entre botones */
+    gap: 10px;
+    /* espacio entre botones */
 }
 
 .boton-detalle {
@@ -150,7 +150,7 @@
     border: 2px solid var(--dark-color);
 }
 
-.boton-detalle-cancelar{
+.boton-detalle-cancelar {
     text-align: center;
     color: #721c24;
     background-color: #f8d7da;
@@ -203,11 +203,12 @@
     border-radius: 25px;
     width: 90%;
     max-width: 600px;
-    max-height: 80vh;
+    max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     transform: scale(0.8);
     transition: transform 0.3s ease;
+
 }
 
 .modal:target .contenido-modal {
@@ -327,96 +328,202 @@
 }
 
 
+/* Responsive General */
 
-/*RESPONSIVE */
-@media (max-width: 768px) {
+/* Hasta 900px (Tablets y menores) */
+@media screen and (max-width: 900px) {
+    .contenido-principal {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .lista-pedidos {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    .tarjeta-pedido {
+        padding: 1.25rem;
+        min-height: 200px;
+    }
+
     .titulo-seccion {
         font-size: 2rem;
     }
 
     .subtitulo-seccion {
-        font-size: 1rem;
-        padding: 0 1rem;
+        font-size: 16px;
+    }
+}
+
+/* Hasta 768px (Móviles grandes) */
+@media screen and (max-width: 768px) {
+    .contenido-principal {
+        padding: 1rem 0.5rem;
+    }
+
+    .contenedor {
+        width: 98%;
+    }
+
+    .lista-pedidos {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .tarjeta-pedido {
+        padding: 2rem 1.5rem;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+
+    .info-pedido,
+    .encabezado-modal {
+        text-align: center;
+    }
+
+    .numero-pedido {
+        font-size: 1.5rem;
+    }
+
+    .fecha-pedido,
+    .estado-pedido,
+    .total-pedido {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .estado-pedido {
+        padding: 0.5rem 1rem;
     }
 
     .contenedor-botones {
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        gap: 15px;
     }
 
     .boton-detalle,
     .boton-detalle-cancelar {
-        width: 100%;
-        text-align: center;
-    }
-
-    .modal {
-        padding: 1rem;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        flex: 1;
     }
 
     .contenido-modal {
-        width: 100%;
-        max-width: 95%;
-        max-height: 90vh;
-        border-radius: 15px;
+        width: 95%;
+        margin: 1rem;
+        padding: 1.25rem;
     }
 
     .encabezado-modal h3 {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
+    }
+
+    .titulo-seccion {
+        font-size: 1.8rem;
+    }
+
+    .subtitulo-seccion {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contenido-principal {
+        padding: 0.5rem 0.25rem;
+        
+    }
+
+    .tarjeta-pedido {
+        padding: 2.5rem 1.75rem;
+        border-radius: 20px;
+        margin: 0 0.5rem;
+        min-height: 240px;
+        
+    }
+
+    .numero-pedido {
+        font-size: 1.6rem;
+        font-weight: 800;
+        
+    }
+
+    .fecha-pedido {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .estado-pedido {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+        font-weight: 700;
+    }
+
+    .total-pedido {
+        font-size: 1.6rem;
+        font-weight: 800;
+    }
+
+    .contenedor-botones {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .boton-detalle,
+    .boton-detalle-cancelar {
+        padding: 1.25rem 1.75rem;
+        font-size: 1.1rem;
+        border-radius: 12px;
+        font-weight: 700;
+    }
+
+    .titulo-seccion {
+        font-size: 1.6rem;
+    }
+
+    .subtitulo-seccion {
+        font-size: 14px;
+    }
+
+    .contenido-modal {
+        width: 98%;
+        margin: 0.5rem;
+        border-radius: 20px;
+        padding: 1rem;
+    }
+
+    .encabezado-modal {
+        padding: 10px;
+    }
+
+    .encabezado-modal h3 {
+        font-size: 1.4rem;
+    }
+
+    .boton-cerrar {
+        font-size: 2.5rem;
+        align-self: flex-end;
+    }
+
+    .info-general p,
+    .linea-resumen {
+        font-size: 1.1rem;
     }
 
     .producto-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+        padding: 1rem 0;
     }
 
-    .linea-resumen {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.25rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .titulo-seccion {
-        font-size: 1.75rem;
+    .nombre-producto,
+    .precio-producto {
+        font-size: 1.2rem;
     }
 
-    .subtitulo-seccion {
-        font-size: 0.95rem;
-    }
-
-    .numero-pedido {
-        font-size: 1.1rem;
-    }
-
-    .fecha-pedido {
-        font-size: 0.85rem;
-    }
-
-    .estado-pedido {
-        font-size: 0.75rem;
-    }
-
-    .total-pedido {
-        font-size: 1rem;
-    }
-
-    .encabezado-modal {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-    }
-
-    .boton-cerrar {
-        align-self: flex-end;
+    .linea-resumen.total {
+        font-size: 1.3rem;
+        padding-top: 1.25rem;
     }
 }

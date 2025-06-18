@@ -85,7 +85,7 @@
     border: 2px solid var(--dark-color);
     margin-bottom: 10px;
     text-align: center;
-    
+
 }
 
 .boton-modificar1:hover {
@@ -144,31 +144,67 @@
 
 
 /* Responsive */
-@media (max-width: 768px) {
-    .contenedor-encabezado {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .menu-navegacion {
-        justify-content: center;
-    }
-
-    .banner h1 {
-        font-size: 2rem;
-    }
-
-    .fila-busqueda {
-        flex-direction: column;
-    }
-
-    .entrada-busqueda,
-    .select-filtro,
-    .grupo-precio {
-        min-width: 100%;
-    }
+/* @media (max-width: 768px) {
+    
 
     .grilla-productos {
         grid-template-columns: 1fr;
+    }
+} */
+
+
+@media (max-width: 768px) {
+    .grid-productos {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .nombre-producto {
+        font-size: 18px;
+    }
+
+    .descripcion-producto {
+        font-size: 16px;
+    }
+
+    .precio-producto {
+        font-size: 1.3rem;
+    }
+
+    .boton-modificar1,
+    .boton-eliminar {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-productos {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-producto {
+        padding: 1rem;
+    }
+
+    .nombre-producto {
+        font-size: 16px;
+    }
+
+    .descripcion-producto {
+        font-size: 14px;
+    }
+
+    .precio-producto {
+        font-size: 1.1rem;
+    }
+
+    .boton-modificar1,
+    .boton-eliminar {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .titulo-productos {
+        font-size: 2rem;
     }
 }

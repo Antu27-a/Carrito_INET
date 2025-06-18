@@ -56,7 +56,6 @@ header {
     top: 0;
     z-index: 100;
     font-weight: bold;
-
     width: auto;
     /* asegurate de que no esté en vw */
     /* box-sizing: border-box; */
@@ -107,9 +106,10 @@ nav ul {
     display: flex;
     list-style: none;
     /* padding-left: 0; */
+    align-items: center;
 }
 
-nav ul li { 
+nav ul li {
     padding: 10px;
 }
 
@@ -295,11 +295,6 @@ nav ul li a:hover {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-  
-
-    header {
-        padding: 15px;
-    }
 
     .logo-container {
         flex-direction: column;
@@ -355,7 +350,7 @@ nav ul li a:hover {
     }
 }
 
-@media screen and (max-width: 250px) {
+@media screen and (max-width: 350px) {
     .menu-movil {
         width: 100%;
         right: -100%;

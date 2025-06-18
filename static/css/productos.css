@@ -214,33 +214,110 @@
     left: 0;
 }
 
+/* -ress*/
+@media screen and (max-width: 900px) {
+  .contenedor-banner {
+    height: auto;
+    padding: 60px 1rem;
+  }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .contenedor-encabezado {
-        flex-direction: column;
-        text-align: center;
-    }
+  .banner h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
 
-    .menu-navegacion {
-        justify-content: center;
-    }
+  .fila-busqueda {
+    font-size: 1rem;
+    gap: 0.75rem;
+  }
 
-    .banner h1 {
-        font-size: 2rem;
-    }
+  .entrada-busqueda,
+  .entrada-precio,
+  .selector-filtro,
+  .boton-filtrar {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
 
-    .fila-busqueda {
-        flex-direction: column;
-    }
+  .grupo-precio {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 
-    .entrada-busqueda,
-    .select-filtro,
-    .grupo-precio {
-        min-width: 100%;
-    }
+  .grid-productos {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 10px;
+  }
 
-    .grilla-productos {
-        grid-template-columns: 1fr;
-    }
+  .tarjeta-producto {
+    padding: 1rem;
+  }
+
+  .nombre-producto,
+  .descripcion-producto,
+  .precio-producto {
+    font-size: 1rem;
+  }
+
+  .tipo-producto,
+  .CODIGO {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .boton-agregar {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .titulo-productos {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Móviles  pequeños */
+@media screen and (max-width: 480px) {
+  .contenedor-banner {
+    padding: 40px 1rem;
+  }
+
+  .banner h1 {
+    font-size: 1.7rem;
+  }
+
+  .fila-busqueda {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .boton-filtrar {
+    width: 100%;
+  }
+
+  .titulo-productos {
+    font-size: 1.5rem;
+  }
+
+  .grid-productos {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta-producto {
+    padding: 0.75rem;
+  }
+
+  .descripcion-producto {
+    font-size: 0.95rem;
+  }
+
+  .precio-producto {
+    font-size: 1.2rem;
+  }
+
+  .boton-agregar img {
+    max-width: 20px;
+  }
 }
