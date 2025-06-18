@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let slideInterval
 
   // Variables para los modales
+  const inil = document.querySelector(".inis")
+  const reisi = document.querySelector(".reis")
   const loginBtn = document.querySelector(".login-btn")
   const registerBtn = document.querySelector(".register-btn")
   const loginModal = document.getElementById("login-modal")
@@ -101,6 +103,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  if (inil){
+    como.addEventListener("click", () => {
+      showModal(loginModal)
+    }
+    )
+  }
+  
+  if (reisi){
+    reisi.addEventListener("click", () => {
+      showModal(registerModal)
+    }
+    )
+  }
+
   // Event listeners para abrir modales (botones en la sección welcome)
   if (loginBtn) {
     loginBtn.addEventListener("click", () => {
@@ -147,13 +163,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Prevenir envío de formularios (para demo)
-  const forms = document.querySelectorAll(".auth-form")
-  forms.forEach((form) => {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault()
-      alert("Funcionalidad en desarrollo. Esta es una demostración.")
-    })
-  })
+  // const forms = document.querySelectorAll(".auth-form")
+  // forms.forEach((form) => {
+  //   form.addEventListener("submit", (e) => {
+  //     e.preventDefault()
+  //     alert("Funcionalidad en desarrollo. Esta es una demostración.")
+  //   })
+  // })
 
   // Efecto de parallax en el slider
   window.addEventListener("scroll", () => {
@@ -208,11 +224,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hacer las funciones disponibles globalmente para el menú dinámico
   window.showModal = showModal
   window.closeModal = closeModal
-
-
-  
 })
-
-
 //--------------------------------------------------------------------------------------------------
-
