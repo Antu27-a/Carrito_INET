@@ -5,10 +5,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de compras usuario</title>
+    <link rel="stylesheet" href="../static/css/carrito.css">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <script src="../static/js/menu-hamburguesa.js"></script>
 </head>
 
 <body>
-    
+
+    <!-- Checkbox oculto para controlar el modal -->
+    <input type="checkbox" id="modal-toggle" class="modal-toggle">
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo-container">
+            <img src="../static/img/logo.png" alt="Logo" class="logo">
+            <div class="slogan">
+                <h1> DEST </h1>
+                <p>Descubre el mundo, vive la experiencia</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="menu-navegacion">
+                <li> <a href="../pages/productos.html"> <img src="../static/img/encabezado-logueado/home.png"
+                            alt="home"> Inicio</a></li>
+                <li><a href="../pages/carrito.html"> <img src="../static/img/encabezado-logueado/grocery-store.png"
+                            alt="home"> Ver carrito</a></li>
+                <li><a href="../pages/ver-pedidos.html"> <img
+                            src="../static/img/encabezado-logueado/bolsa-de-la-compra.png" alt="home"> Mis pedidos</a>
+                </li>
+                <li> <a class="cerrar-sesion" href="../index.html"> <img
+                            src="../static/img/encabezado-logueado/salida.png" alt="home"> Cerrar sesión</a></li>
+            </ul>
+        </nav>
+
+        <!-- Botón Hamburguesa -->
+        <button class="boton-hamburguesa" onclick="toggleMenu()">
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+        </button>
+    </header>
+    <!-- Overlay para cerrar menú -->
+    <div class="overlay-menu" onclick="cerrarMenu()"></div>
+
+    <!-- Menú Móvil -->
+    <div class="menu-movil">
+        <ul>
+            <li><a href="../pages/productos.html"><img src="../static/img/encabezado-logueado/home.png" alt="home">
+                    Inicio</a></li>
+            <!-- <li><a href="../pages/cargar-productos.html"><img
+                        src="../static/img/encabezado-logueado/agregar-paquete.png" alt="carrito"> Agregar producto</a>
+            </li> -->
+            <li><a href="pages/carrito.html"><img src="../static/img/encabezado-logueado/grocery-store.png"
+                        alt="carrito"> Ver carrito</a></li>
+            <li><a href="../pages/ver-pedidos.html"><img src="../static/img/encabezado-logueado/bolsa-de-la-compra.png"
+                        alt="pedidos"> Mis pedidos</a></li>
+            <li><a class="cerrar-sesion" href="../index.html"><img src="../static/img/encabezado-logueado/salida.png"
+                        alt="salir"> Cerrar sesión</a></li>
+        </ul>
+    </div>
+
+
+    <main class="contenido-principal">
+        <div class="contenedor">
+            <div class="layout-carrito">
+                <!-- Sección de Historial -->
+                <section class="seccion-historial">
+                    <h2 class="titulo-seccion">Productos en tu Carrito</h2>
+
+                    <div class="lista-productos">
+                        <!-- Producto 1 -->
+                        <article class="item-producto">
+                            <button class="boton-eliminar" type="button">×</button>
+                            <div class="info-producto">
+                                <span class="codigo-producto">PAQ001</span>
+                                
+                                <h3 class="nombre-producto">Paquete Cancún Todo Incluido</h3>
+                                <p class="descripcion-producto">7 días / 6 noches - Hotel 5 estrellas</p>
+                            </div>
+                            <div class="controles-cantidad">
+                                <button class="boton-cantidad" type="button">-</button>
+                                <input type="number" value="2" min="1" max="10" class="input-cantidad">
+                                <button class="boton-cantidad" type="button">+</button>
+                            </div>
+                            <div class="precio-producto">
+                                <span class="precio-unitario">$1,299.00</span>
+                                <span class="precio-total">$2,598.00</span>
+                            </div>
+                           
+                        </article>
+
+                        <!-- Producto 2 -->
+                        <article class="item-producto">
+                            <button class="boton-eliminar" type="button">×</button>
+                            <div class="info-producto">
+                                <span class="codigo-producto">VUE002</span>
+                                <h3 class="nombre-producto">Vuelo Ciudad de México - París</h3>
+                                <p class="descripcion-producto">Ida y vuelta - Clase turista</p>
+                            </div>
+                            <div class="controles-cantidad">
+                                <button class="boton-cantidad" type="button">-</button>
+                                <input type="number" value="1" min="1" max="10" class="input-cantidad">
+                                <button class="boton-cantidad" type="button">+</button>
+                            </div>
+                            <div class="precio-producto">
+                                <span class="precio-total">$899.00</span>
+                            </div>
+                            
+                        </article>
+
+                        <!-- Producto 3 -->
+                        <article class="item-producto">
+                            <button class="boton-eliminar" type="button">×</button>
+                            <div class="info-producto">
+                                <span class="codigo-producto">HOT003</span>
+                                <h3 class="nombre-producto">Hotel Playa del Carmen</h3>
+                                <p class="descripcion-producto">3 noches - Vista al mar</p>
+                            </div>
+                            <div class="controles-cantidad">
+                                <button class="boton-cantidad" type="button">-</button>
+                                <input type="number" value="1" min="1" max="10" class="input-cantidad">
+                                <button class="boton-cantidad" type="button">+</button>
+                            </div>
+                            <div class="precio-producto">
+                                <span class="precio-unitario">$450.00</span>
+                                <span class="precio-total">$450.00</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="acciones-carrito">
+                        <a href="carrito.html" class="boton-vaciar">Vaciar Carrito</a>
+                        <a href="productos.html" class="boton-secundario">Seguir Comprando</a>
+                    </div>
+                </section>
+
+                <!-- Sección de Resumen -->
+                <aside class="seccion-resumen">
+                    <div class="tarjeta-resumen">
+                        <h2 class="titulo-resumen">Resumen de Compra</h2>
+
+                        <div class="detalle-resumen">
+                            <div class="linea-resumen">
+                                <span>Subtotal:</span>
+                                <span>$3,947.00</span>
+                            </div>
+                            <div class="linea-resumen">
+                                <span>Impuestos:</span>
+                                <span>$631.52</span>
+                            </div>
+                            <div class="linea-resumen">
+                                <span>Descuento:</span>
+                                <span class="descuento">-$200.00</span>
+                            </div>
+                            <hr class="separador">
+                            <div class="linea-resumen total">
+                                <span>Total:</span>
+                                <span>$4,378.52</span>
+                            </div>
+                        </div>
+
+                        <label for="modal-toggle" class="boton-confirmar">
+                            Confirmar Compra
+                        </label>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Confirmación -->
+    <div class="modal-overlay">
+        <div class="modal-contenido">
+            <div class="modal-encabezado">
+                <h2>Método de Pago</h2>
+                <label for="modal-toggle" class="boton-cerrar">×</label>
+            </div>
+
+            <div class="modal-cuerpo">
+                <form class="formulario-pago">
+                    <div class="opciones-pago">
+                        <label class="opcion-pago">
+                            <input type="radio" name="metodo-pago" value="tarjeta" checked>
+                            <span class="radio-custom"></span>
+                            <span>Tarjeta de Crédito/Débito</span>
+                        </label>
+
+                        <label class="opcion-pago">
+                            <input type="radio" name="metodo-pago" value="paypal">
+                            <span class="radio-custom"></span>
+                            <span>PayPal</span>
+                        </label>
+
+                        <label class="opcion-pago">
+                            <input type="radio" name="metodo-pago" value="transferencia">
+                            <span class="radio-custom"></span>
+                            <span>Transferencia Bancaria</span>
+                        </label>
+                    </div>
+
+                    <div class="total-modal">
+                        <strong>Total a pagar: $4,378.52</strong>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-acciones">
+                <label for="modal-toggle" class="boton-cancelar">Cancelar Compra</label>
+                <button type="submit" class="boton-comprar">Comprar Ahora</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pie-pagina">
+            <p>&copy; DEST. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 
 </html>
