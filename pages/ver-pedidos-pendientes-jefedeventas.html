@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEDIDOS PENDIENTES JEFE DE VENTAS</title>
+    <link rel="stylesheet" href="../static/css/ver-pendientes-jefedeventas.css">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <script src="../static/js/menu-hamburguesa.js"></script>
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo-container">
+            <img src="../static/img/logo.png" alt="Logo" class="logo">
+            <div class="slogan">
+                <h1> DEST </h1>
+                <p>Descubre el mundo, vive la experiencia</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="menu-navegacion">
+                <li> <a href="../pages/productos.html"> <img src="../static/img/encabezado-logueado/home.png"
+                            alt="home"> Inicio</a></li>
+                <li> <a href="../pages/productos.html"> <img src="../static/img/encabezado-logueado/home.png"
+                            alt="home"> Agregar producto</a></li>
+                <li><a href="../pages/carrito.html"> <img src="../static/img/encabezado-logueado/"
+                            alt="home"> Ver Pendientes</a></li>
+                <li> <a class="cerrar-sesion" href="../index.html"> <img
+                            src="../static/img/encabezado-logueado/salida.png" alt="home"> Cerrar sesión</a></li>
+            </ul>
+        </nav>
+        <!-- Botón Hamburguesa -->
+        <button class="boton-hamburguesa" onclick="toggleMenu()">
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+            <div class="linea-hamburguesa"></div>
+        </button>
+    </header>
+
+    <!-- Overlay para cerrar menú -->
+    <div class="overlay-menu" onclick="cerrarMenu()"></div>
+
+    <!-- Menú Móvil -->
+    <div class="menu-movil">
+        <ul>
+            <li><a href="pages/productos.html"><img src="../static/img/encabezado-logueado/home.png" alt="home">
+                    Inicio</a></li>
+            <li><a href="../pages/cargar-productos.html"><img
+                        src="../static/img/encabezado-logueado/agregar-paquete.png" alt="carrito"> Agregar producto</a>
+            </li>
+            <li><a href="../pages/ver-pedidos-pendientes-jefedeventas.html"><img src="../static/img/encabezado-logueado/"
+                        alt="carrito"> Ver Pendientes</a></li>
+            <li><a class="cerrar-sesion" href="../index.html"><img src="../static/img/encabezado-logueado/salida.png"
+                        alt="salir"> Cerrar sesión</a></li>
+        </ul>
+    </div>
+
+    <section class="vista-jefe">
+        <div class="contenedor-jefe">
+            <h1>Pedidos Pendientes</h1>
+
+            <div class="tabla-scroll">
+                <div class="tabla-pedidos">
+                    <div class="fila encabezado">
+                        <span>Cliente</span>
+                        <span>Destino</span>
+                        <span>Precio</span>
+                    </div>
+
+                    <div class="fila">
+                        <span>Juan Pérez</span>
+                        <span>Bariloche</span>
+                        <span>$250.000</span>
+                        <span>
+                            <button class="btn confirmar">Confirmar</button>
+                            <button class="btn cancelar">Cancelar</button>
+                        </span>
+                    </div>
+
+                    <div class="fila">
+                        <span>María López</span>
+                        <span>Mendoza</span>
+                        <span>$180.000</span>
+                        <span>
+                            <button class="btn confirmar">Confirmar</button>
+                            <button class="btn cancelar">Cancelar</button>
+                        </span>
+                    </div>
+                    <div class="fila">
+                        <span>María López</span>
+                        <span>Mendoza</span>
+                        <span>$180.000</span>
+                        <span>
+                            <button class="btn confirmar">Confirmar</button>
+                            <button class="btn cancelar">Cancelar</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn ver-historial" onclick="document.getElementById('modal').style.display='flex'">Ver
+                historial</button>
+            <button class="btn-ver-estado-cuenta"
+                onclick="document.getElementById('modalCuenta').style.display='flex'">Ver Estado de Cuenta</button>
+        </div>
+    </section>
+
+
+    <!-- Modal Historial -->
+    <div id="modal" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+            <h3>Pedidos Entregados</h3>
+            <div class="tabla-pedidos">
+                <div class="fila encabezado1">
+                    <span>Cliente</span>
+                    <span>Destino</span>
+                    <span>Fecha</span>
+                    <span>Total</span>
+                </div>
+                <div class="fila1">
+                    <span data-label="Cliente">Laura Gómez</span>
+                    <span data-label="Destino">Salta</span>
+                    <span data-label="Fecha">10/06/2025</span>
+                    <span data-label="Total">$300.000</span>
+                </div>
+                <div class="fila1">
+                    <span data-label="Cliente">Laura Gómez</span>
+                    <span data-label="Destino">Salta</span>
+                    <span data-label="Fecha">10/06/2025</span>
+                    <span data-label="Total">$300.000</span>
+                </div>
+                <div class="fila1">
+                    <span data-label="Cliente">Laura Gómez</span>
+                    <span data-label="Destino">Salta</span>
+                    <span data-label="Fecha">10/06/2025</span>
+                    <span data-label="Total">$300.000</span>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Estado de Cuenta -->
+    <div id="modalCuenta" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="document.getElementById('modalCuenta').style.display='none'">&times;</span>
+            <h3>Estado de Cuenta</h3>
+
+            <div class="tabla-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Fecha"><time datetime="2025-06-30">2025-06-30</time></td>
+                            <td data-label="Cliente">María Gómez</td>
+                            <td data-label="Total">$520.000</td>
+                            <td data-label="Estado">A cobrar</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Fecha"><time datetime="2025-06-30">2025-06-30</time></td>
+                            <td data-label="Cliente">María Gómez</td>
+                            <td data-label="Total">$520.000</td>
+                            <td data-label="Estado">A cobrar</td>
+                        </tr>
+                        <!-- + filas -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
